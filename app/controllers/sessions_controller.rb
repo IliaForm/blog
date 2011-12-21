@@ -1,12 +1,16 @@
 class SessionsController < ApplicationController
 
+	def new
+	
+    end
+
 	def create
-		if user = User.authenticate(params[:meail], params[:password])
+		if user = User.authenticate(params[:email], params[:password])
 			session[:user_id] = user.id
 			redirect_to root_path, :notice => "Logged in successfully"
-		esle
+		else
 		    flash.now[:alert] = "Invalid email/password combination"
-		    render :action => 'new'
+		    render 'new'
         end
     end
 
