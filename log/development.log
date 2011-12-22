@@ -7585,3 +7585,2308 @@ Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 22:20:48 +
 Rendered comments/new.html.erb (28.7ms)
 Rendered comments/new.js.erb (30.6ms)
 Completed 200 OK in 57ms (Views: 37.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 22:25:35 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.8ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (24.4ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (15.5ms)
+Rendered articles/show.html.erb within layouts/application (65.3ms)
+Completed 200 OK in 90ms (Views: 68.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 22:25:40 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered comments/new.html.erb (28.4ms)
+Rendered comments/new.js.erb (30.2ms)
+Completed 200 OK in 57ms (Views: 36.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 22:25:48 +0400
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "comment"=>{"name"=>"", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 108ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 22:25:48 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (28.4ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (10.7ms)
+Rendered articles/show.html.erb within layouts/application (110.7ms)
+Completed 200 OK in 136ms (Views: 114.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 22:25:52 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered comments/new.html.erb (31.4ms)
+Rendered comments/new.js.erb (33.3ms)
+Completed 200 OK in 64ms (Views: 40.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-21 22:25:54 +0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-12-21 22:26:00 +0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "email"=>"formal7@yandex.ru", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'formal7@yandex.ru' LIMIT 1[0m
+Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 41ms (Views: 13.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-12-21 22:26:12 +0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "email"=>"formal7@yandex.ru", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'formal7@yandex.ru' LIMIT 1
+Rendered sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 82ms (Views: 10.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-12-21 22:26:19 +0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "email"=>"formal7@yandex.ru", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'formal7@yandex.ru' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 29ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-21 22:26:19 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (79.8ms)
+Rendered articles/index.html.erb within layouts/application (84.5ms)
+Completed 200 OK in 148ms (Views: 87.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/articles/2" for 127.0.0.1 at 2011-12-21 22:26:23 +0400
+  Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `articles` WHERE `articles`.`id` = 2
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT * FROM `categories` INNER JOIN `articles_categories` ON `categories`.id = `articles_categories`.category_id WHERE (`articles_categories`.article_id = 2 ) ORDER BY categories.name
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM `articles_categories` WHERE `articles_categories`.`article_id` = 2 AND `articles_categories`.`category_id` IN (3, 2)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 167ms
+
+
+Started GET "/articles" for 127.0.0.1 at 2011-12-21 22:26:24 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (73.7ms)
+Rendered articles/index.html.erb within layouts/application (78.6ms)
+Completed 200 OK in 145ms (Views: 82.1ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/articles/3" for 127.0.0.1 at 2011-12-21 22:26:28 +0400
+  Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "id"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 3 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `articles` WHERE `articles`.`id` = 3
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT * FROM `categories` INNER JOIN `articles_categories` ON `categories`.id = `articles_categories`.category_id WHERE (`articles_categories`.article_id = 3 ) ORDER BY categories.name
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM `articles_categories` WHERE `articles_categories`.`article_id` = 3 AND `articles_categories`.`category_id` IN (3, 2)[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 90ms
+
+
+Started GET "/articles" for 127.0.0.1 at 2011-12-21 22:26:28 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (81.2ms)
+Rendered articles/index.html.erb within layouts/application (87.2ms)
+Completed 200 OK in 161ms (Views: 92.5ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:26:30 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (43.4ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)[0m
+Rendered comments/_comment.html.erb (11.8ms)
+Rendered articles/show.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 105ms (Views: 82.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:26:31 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+Rendered comments/new.html.erb (28.7ms)
+Rendered comments/new.js.erb (30.5ms)
+Completed 200 OK in 58ms (Views: 37.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:45:13 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSQL (0.8ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (46.0ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)
+Rendered comments/_comment.html.erb (12.1ms)
+Rendered articles/show.html.erb within layouts/application (84.1ms)
+Completed 200 OK in 116ms (Views: 88.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:45:15 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+Rendered comments/new.html.erb (29.0ms)
+Rendered comments/new.js.erb (30.9ms)
+Completed 200 OK in 58ms (Views: 37.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:45:18 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (43.8ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)[0m
+Rendered comments/_comment.html.erb (11.2ms)
+Rendered articles/show.html.erb within layouts/application (80.2ms)
+Completed 200 OK in 151ms (Views: 83.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:45:19 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+Rendered comments/new.html.erb (28.6ms)
+Rendered comments/new.js.erb (30.5ms)
+Completed 200 OK in 57ms (Views: 37.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:45:22 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (41.4ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)
+Rendered comments/_comment.html.erb (11.0ms)
+Rendered articles/show.html.erb within layouts/application (117.0ms)
+Completed 200 OK in 141ms (Views: 120.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:45:24 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+Rendered comments/new.html.erb (28.7ms)
+Rendered comments/new.js.erb (30.6ms)
+Completed 200 OK in 98ms (Views: 37.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:45:25 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (84.1ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)[0m
+Rendered comments/_comment.html.erb (10.9ms)
+Rendered articles/show.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 143ms (Views: 121.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:45:26 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+Rendered comments/new.html.erb (69.7ms)
+Rendered comments/new.js.erb (71.6ms)
+Completed 200 OK in 98ms (Views: 78.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2011-12-21 22:45:30 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (109.9ms)
+Rendered articles/index.html.erb within layouts/application (114.8ms)
+Completed 200 OK in 138ms (Views: 117.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2011-12-21 22:45:32 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (116.8ms)
+Rendered articles/index.html.erb within layouts/application (121.8ms)
+Completed 200 OK in 145ms (Views: 124.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:45:33 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (84.1ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)
+Rendered comments/_comment.html.erb (10.9ms)
+Rendered articles/show.html.erb within layouts/application (118.4ms)
+Completed 200 OK in 143ms (Views: 121.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:45:35 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+Rendered comments/new.html.erb (72.1ms)
+Rendered comments/new.js.erb (75.2ms)
+Completed 200 OK in 107ms (Views: 86.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/articles/7/comments" for 127.0.0.1 at 2011-12-21 22:45:50 +0400
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "comment"=>{"name"=>"ваиваи", "email"=>"ваиваи", "body"=>"авива"}, "commit"=>"Add", "article_id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (7, 'ваиваи', 'ваиваи', 'авива', '2011-12-21 18:45:50', '2011-12-21 18:45:50')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/7
+Completed 302 Found in 55ms
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:45:50 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (41.5ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)
+Rendered comments/_comment.html.erb (12.4ms)
+Rendered articles/show.html.erb within layouts/application (77.9ms)
+Completed 200 OK in 149ms (Views: 81.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:45:53 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+Rendered comments/new.html.erb (28.9ms)
+Rendered comments/new.js.erb (30.7ms)
+Completed 200 OK in 57ms (Views: 37.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:47:40 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (42.2ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)[0m
+Rendered comments/_comment.html.erb (12.7ms)
+Rendered articles/show.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 154ms (Views: 91.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:47:44 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[35mSQL (1.0ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+Rendered comments/new.html.erb (28.6ms)
+Rendered comments/new.js.erb (30.4ms)
+Completed 200 OK in 57ms (Views: 37.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:47:47 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (43.7ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)
+Rendered comments/_comment.html.erb (12.6ms)
+Rendered articles/show.html.erb within layouts/application (119.6ms)
+Completed 200 OK in 146ms (Views: 122.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:47:49 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+Rendered comments/new.html.erb (28.7ms)
+Rendered comments/new.js.erb (30.9ms)
+Completed 200 OK in 95ms (Views: 37.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:47:50 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (90.0ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)[0m
+Rendered comments/_comment.html.erb (11.6ms)
+Rendered articles/show.html.erb within layouts/application (131.3ms)
+Completed 200 OK in 155ms (Views: 134.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:47:51 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+Rendered comments/new.html.erb (87.7ms)
+Rendered comments/new.js.erb (89.8ms)
+Completed 200 OK in 116ms (Views: 96.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 22:47:52 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (83.6ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)
+Rendered comments/_comment.html.erb (11.6ms)
+Rendered articles/show.html.erb within layouts/application (123.0ms)
+Completed 200 OK in 147ms (Views: 126.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 22:47:54 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+Rendered comments/new.html.erb (68.1ms)
+Rendered comments/new.js.erb (70.0ms)
+Completed 200 OK in 97ms (Views: 76.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-21 23:08:51 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (111.0ms)
+Rendered articles/index.html.erb within layouts/application (115.9ms)
+Completed 200 OK in 139ms (Views: 119.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 23:16:52 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (85.7ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)[0m
+Rendered comments/_comment.html.erb (12.0ms)
+Rendered articles/show.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 146ms (Views: 124.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/articles/7/comments/new.js" for 127.0.0.1 at 2011-12-21 23:17:01 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"7"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+Rendered comments/new.html.erb (68.9ms)
+Rendered comments/new.js.erb (70.7ms)
+Completed 200 OK in 97ms (Views: 77.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/articles/7/comments" for 127.0.0.1 at 2011-12-21 23:17:08 +0400
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "comment"=>{"name"=>"erer", "email"=>"rg", "body"=>"rgrgrg"}, "commit"=>"Add", "article_id"=>"7"}
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  describe `comments`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (7, 'erer', 'rg', 'rgrgrg', '2011-12-21 19:17:08', '2011-12-21 19:17:08')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/articles/7
+Completed 302 Found in 56ms
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2011-12-21 23:17:08 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 7 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (43.2ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 7)[0m
+Rendered comments/_comment.html.erb (13.8ms)
+Rendered articles/show.html.erb within layouts/application (89.3ms)
+Completed 200 OK in 123ms (Views: 95.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-21 23:17:14 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (75.6ms)
+Rendered articles/index.html.erb within layouts/application (80.6ms)
+Completed 200 OK in 105ms (Views: 83.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/articles/11" for 127.0.0.1 at 2011-12-21 23:17:18 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 11 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+Rendered articles/_article.html.erb (42.9ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 11)
+Rendered collection (0.0ms)
+Rendered articles/show.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 90ms (Views: 68.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/articles/11/comments/new.js" for 127.0.0.1 at 2011-12-21 23:17:20 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"11"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 11 LIMIT 1
+Rendered comments/new.html.erb (28.6ms)
+Rendered comments/new.js.erb (30.4ms)
+Completed 200 OK in 57ms (Views: 37.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/articles/11/comments" for 127.0.0.1 at 2011-12-21 23:17:23 +0400
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x19C2jCtTYX+/6eyVwZZd9XpON3seJ1Wax6TUWVSjr0=", "comment"=>{"name"=>"dtherh", "email"=>"ergrg", "body"=>"erger"}, "commit"=>"Add", "article_id"=>"11"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 11 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 11 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (11, 'dtherh', 'ergrg', 'erger', '2011-12-21 19:17:23', '2011-12-21 19:17:23')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/11
+Completed 302 Found in 103ms
+
+
+Started GET "/articles/11" for 127.0.0.1 at 2011-12-21 23:17:23 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSQL (1.0ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 11 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+Rendered articles/_article.html.erb (85.1ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 11)
+Rendered comments/_comment.html.erb (9.9ms)
+Rendered articles/show.html.erb within layouts/application (120.8ms)
+Completed 200 OK in 146ms (Views: 123.7ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/articles/11" for 127.0.0.1 at 2011-12-21 23:17:28 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 11 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+Rendered articles/_article.html.erb (42.5ms)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 11)[0m
+Rendered comments/_comment.html.erb (10.1ms)
+Rendered articles/show.html.erb within layouts/application (119.6ms)
+Completed 200 OK in 144ms (Views: 122.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-21 23:17:31 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.6ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (123.6ms)
+Rendered articles/index.html.erb within layouts/application (128.6ms)
+Completed 200 OK in 151ms (Views: 131.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/articles/12" for 127.0.0.1 at 2011-12-21 23:17:41 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 12 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (55.8ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 12)
+Rendered collection (0.0ms)
+Rendered articles/show.html.erb within layouts/application (129.3ms)
+Completed 200 OK in 153ms (Views: 132.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/12/comments/new.js" for 127.0.0.1 at 2011-12-21 23:17:42 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"12"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 12 LIMIT 1
+Rendered comments/new.html.erb (71.4ms)
+Rendered comments/new.js.erb (73.3ms)
+Completed 200 OK in 100ms (Views: 80.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/articles/12" for 127.0.0.1 at 2011-12-21 23:19:12 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 12 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (95.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 12)[0m
+Rendered collection (0.0ms)
+Rendered articles/show.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 143ms (Views: 121.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:19:16 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (85.6ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (12.4ms)
+Rendered articles/show.html.erb within layouts/application (126.6ms)
+Completed 200 OK in 161ms (Views: 132.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:19:27 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered comments/new.html.erb (73.3ms)
+Rendered comments/new.js.erb (75.3ms)
+Completed 200 OK in 102ms (Views: 82.0ms | ActiveRecord: 2.1ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:36:15 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mArticle Load (23.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (217.3ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (2.3ms)
+Rendered articles/show.html.erb within layouts/application (398.7ms)
+Completed 200 OK in 699ms (Views: 433.8ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:39:58 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered comments/new.html.erb (79.2ms)
+Rendered comments/new.js.erb (81.5ms)
+Completed 200 OK in 146ms (Views: 120.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:40:02 +0400
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"sf", "email"=>"sdf", "body"=>"sdf"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'sf', 'sdf', 'sdf', '2011-12-21 19:40:02', '2011-12-21 19:40:02')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 96ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:40:02 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (67.8ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (13.8ms)
+Rendered articles/show.html.erb within layouts/application (105.5ms)
+Completed 200 OK in 129ms (Views: 109.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:40:39 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (25.2ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (9.5ms)
+Rendered articles/show.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 121ms (Views: 63.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:40:39 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (25.8ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (10.0ms)
+Rendered articles/show.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 128ms (Views: 63.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:40:40 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+ERROR: compiling _app_views_comments_new_html_erb___2826559840941630959_40665900__3145502138116758826 RAISED /home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote =>  true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_comments_new_html_erb___2826559840941630959_40665900__3145502138116758826(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "comments/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+), :remote =>  true do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div class="field">
+    ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :email );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :body );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :body );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit 'Add' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/chapter07/app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_40749260__3145502138116758826'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__2251049851991148485__process_action__534202710705931864__callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered comments/new.html.erb (1.1ms)
+Rendered comments/new.js.erb (2.7ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (/home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote =>  true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end):
+    1: <%= form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+    2: ), :remote =>  true do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :name %><br />
+    5:     <%= f.text_field :name %>
+  app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_40749260__3145502138116758826'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.3ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.9ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:40:42 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+ERROR: compiling _app_views_comments_new_html_erb___2826559840941630959_25869040__3145502138116758826 RAISED /home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote =>  true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_comments_new_html_erb___2826559840941630959_25869040__3145502138116758826(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "comments/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+), :remote =>  true do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div class="field">
+    ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :email );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :body );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :body );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit 'Add' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/chapter07/app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_26104620__3145502138116758826'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__2251049851991148485__process_action__534202710705931864__callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered comments/new.html.erb (1.1ms)
+Rendered comments/new.js.erb (2.6ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (/home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote =>  true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end):
+    1: <%= form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+    2: ), :remote =>  true do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :name %><br />
+    5:     <%= f.text_field :name %>
+  app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_26104620__3145502138116758826'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (40.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (61.0ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:40:43 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+ERROR: compiling _app_views_comments_new_html_erb___2826559840941630959_38829620__3145502138116758826 RAISED /home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote =>  true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_comments_new_html_erb___2826559840941630959_38829620__3145502138116758826(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "comments/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+), :remote =>  true do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div class="field">
+    ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :email );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :body );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :body );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit 'Add' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/chapter07/app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_38875000__3145502138116758826'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__2251049851991148485__process_action__534202710705931864__callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered comments/new.html.erb (1.0ms)
+Rendered comments/new.js.erb (2.7ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (/home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote =>  true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end):
+    1: <%= form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+    2: ), :remote =>  true do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :name %><br />
+    5:     <%= f.text_field :name %>
+  app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_38875000__3145502138116758826'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.9ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.7ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:41:21 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+ERROR: compiling _app_views_comments_new_html_erb___2826559840941630959_39771120__3145502138116758826 RAISED /home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote => true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_comments_new_html_erb___2826559840941630959_39771120__3145502138116758826(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "comments/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+), :remote => true do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div class="field">
+    ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :email );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :body );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :body );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit 'Add' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/chapter07/app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_39796360__3145502138116758826'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__2251049851991148485__process_action__534202710705931864__callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered comments/new.html.erb (1.1ms)
+Rendered comments/new.js.erb (2.7ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (/home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote => true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end):
+    1: <%= form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+    2: ), :remote => true do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :name %><br />
+    5:     <%= f.text_field :name %>
+  app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_39796360__3145502138116758826'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.0ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.2ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:41:22 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (24.9ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (9.8ms)
+Rendered articles/show.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 127ms (Views: 62.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:41:24 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+ERROR: compiling _app_views_comments_new_html_erb___2826559840941630959_41076920__3145502138116758826 RAISED /home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote => true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_comments_new_html_erb___2826559840941630959_41076920__3145502138116758826(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "comments/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+), :remote => true do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div class="field">
+    ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :email );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :body );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :body );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit 'Add' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/chapter07/app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_41106340__3145502138116758826'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__2251049851991148485__process_action__534202710705931864__callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered comments/new.html.erb (1.1ms)
+Rendered comments/new.js.erb (2.7ms)
+Completed 500 Internal Server Error in 70ms
+
+ActionView::Template::Error (/home/ilia/chapter07/app/views/comments/new.html.erb:2: syntax error, unexpected tASSOC, expecting keyword_end
+), :remote => true do |f| @output_buffer.safe_concat('
+             ^
+/home/ilia/chapter07/app/views/comments/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting $end):
+    1: <%= form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}
+    2: ), :remote => true do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :name %><br />
+    5:     <%= f.text_field :name %>
+  app/views/comments/new.js.erb:1:in `_app_views_comments_new_js_erb___849176262996319228_41106340__3145502138116758826'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.8ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:02 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (67.8ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (15.1ms)
+Rendered articles/show.html.erb within layouts/application (109.3ms)
+Completed 200 OK in 138ms (Views: 113.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:42:03 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered comments/new.html.erb (68.1ms)
+Rendered comments/new.js.erb (70.0ms)
+Completed 200 OK in 97ms (Views: 76.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:42:08 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'dfb', 'dfbhd', 'ertg', '2011-12-21 19:42:08', '2011-12-21 19:42:08')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 57ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:08 +0400
+  Processing by ArticlesController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (26.2ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (10.5ms)
+Rendered articles/show.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 93ms (Views: 71.7ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:42:10 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'dfb', 'dfbhd', 'ertg', '2011-12-21 19:42:10', '2011-12-21 19:42:10')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 54ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:10 +0400
+  Processing by ArticlesController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.8ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (25.2ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (13.2ms)
+Rendered articles/show.html.erb within layouts/application (102.7ms)
+Completed 200 OK in 128ms (Views: 106.2ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:42:10 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'dfb', 'dfbhd', 'ertg', '2011-12-21 19:42:11', '2011-12-21 19:42:11')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 94ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:11 +0400
+  Processing by ArticlesController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (4.7ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (25.9ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (50.8ms)
+Rendered articles/show.html.erb within layouts/application (104.2ms)
+Completed 200 OK in 133ms (Views: 107.7ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:42:11 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'dfb', 'dfbhd', 'ertg', '2011-12-21 19:42:11', '2011-12-21 19:42:11')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 55ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:11 +0400
+  Processing by ArticlesController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (25.0ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (11.8ms)
+Rendered articles/show.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 130ms (Views: 63.9ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:42:17 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'dfb', 'dfbhd', 'ertg', '2011-12-21 19:42:17', '2011-12-21 19:42:17')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 94ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:17 +0400
+  Processing by ArticlesController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (69.6ms)
+  [1m[35mComment Load (4.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (14.2ms)
+Rendered articles/show.html.erb within layouts/application (112.6ms)
+Completed 200 OK in 137ms (Views: 112.1ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:42:17 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'dfb', 'dfbhd', 'ertg', '2011-12-21 19:42:17', '2011-12-21 19:42:17')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 63ms
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:42:17 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `comments`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'dfb', 'dfbhd', 'ertg', '2011-12-21 19:42:18', '2011-12-21 19:42:18')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 61ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:18 +0400
+  Processing by ArticlesController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (25.0ms)
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (10.6ms)
+Rendered articles/show.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 123ms (Views: 62.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:42:18 +0400
+  Processing by ArticlesController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (27.3ms)
+  [1m[35mComment Load (0.7ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (11.2ms)
+Rendered articles/show.html.erb within layouts/application (61.9ms)
+Completed 200 OK in 125ms (Views: 65.2ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:49:06 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 96ms
+
+ArgumentError (too few arguments):
+  app/controllers/comments_controller.rb:5:in `format'
+  app/controllers/comments_controller.rb:5:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:49:06 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"dfb", "email"=>"dfbhd", "body"=>"ertg"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 51ms
+
+ArgumentError (too few arguments):
+  app/controllers/comments_controller.rb:5:in `format'
+  app/controllers/comments_controller.rb:5:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-21 23:49:56 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (27.0ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (58.4ms)
+Rendered articles/show.html.erb within layouts/application (111.9ms)
+Completed 200 OK in 138ms (Views: 115.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/articles/1/comments/new.js" for 127.0.0.1 at 2011-12-21 23:50:00 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered comments/new.html.erb (29.7ms)
+Rendered comments/new.js.erb (31.9ms)
+Completed 200 OK in 59ms (Views: 38.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:50:04 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"zxc", "email"=>"zxczxc", "body"=>"zxc"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  describe `comments`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'zxc', 'zxczxc', 'zxc', '2011-12-21 19:50:04', '2011-12-21 19:50:04')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Completed 500 Internal Server Error in 60ms
+
+ActionView::MissingTemplate (Missing template comments/create with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:50:05 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"zxc", "email"=>"zxczxc", "body"=>"zxc"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'zxc', 'zxczxc', 'zxc', '2011-12-21 19:50:05', '2011-12-21 19:50:05')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 98ms
+
+ActionView::MissingTemplate (Missing template comments/create with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:50:06 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"zxc", "email"=>"zxczxc", "body"=>"zxc"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  describe `comments`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'zxc', 'zxczxc', 'zxc', '2011-12-21 19:50:06', '2011-12-21 19:50:06')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Completed 500 Internal Server Error in 56ms
+
+ActionView::MissingTemplate (Missing template comments/create with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:50:06 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"zxc", "email"=>"zxczxc", "body"=>"zxc"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (96.1ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'zxc', 'zxczxc', 'zxc', '2011-12-21 19:50:06', '2011-12-21 19:50:06')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 157ms
+
+ActionView::MissingTemplate (Missing template comments/create with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2011-12-21 23:50:06 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8Lwt79hvWaHluQETvoiYg8UHPvFzR5CyE430djFjQs=", "comment"=>{"name"=>"zxc", "email"=>"zxczxc", "body"=>"zxc"}, "commit"=>"Add", "article_id"=>"1"}
+  [1m[35mSQL (1.1ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `comments`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (1, 'zxc', 'zxczxc', 'zxc', '2011-12-21 19:50:07', '2011-12-21 19:50:07')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Completed 500 Internal Server Error in 98ms
+
+ActionView::MissingTemplate (Missing template comments/create with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2011-12-22 09:24:22 +0400
+
+ActionController::RoutingError (No route matches "/categories/new"):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-22 09:24:23 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (21.3ms)[0m  SELECT `articles`.* FROM `articles`
+Rendered articles/_article.html.erb (408.0ms)
+Rendered articles/index.html.erb within layouts/application (599.3ms)
+Completed 200 OK in 1024ms (Views: 637.8ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 09:24:25 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (61.6ms)
+  [1m[36mComment Load (3.8ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (5.3ms)
+Rendered articles/show.html.erb within layouts/application (222.4ms)
+Completed 200 OK in 293ms (Views: 225.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-22 09:24:31 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+Rendered articles/_article.html.erb (82.0ms)
+Rendered articles/index.html.erb within layouts/application (86.4ms)
+Completed 200 OK in 109ms (Views: 90.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2011-12-22 09:24:32 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+Rendered articles/_article.html.erb (24.0ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 5)
+Rendered collection (0.0ms)
+Rendered articles/show.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 76ms (Views: 51.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/5/comments/new.js" for 127.0.0.1 at 2011-12-22 09:24:34 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"5"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+Rendered comments/new.html.erb (193.2ms)
+Rendered comments/new.js.erb (195.2ms)
+Completed 200 OK in 327ms (Views: 306.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:24:39 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"mhtnf", "email"=>" th", "body"=>" thg"}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (2.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (5, 'mhtnf', ' th', ' thg', '2011-12-22 05:24:39', '2011-12-22 05:24:39')
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Rendered comments/_comment.html.erb (27.5ms)
+Rendered comments/create.js.erb (29.5ms)
+Completed 200 OK in 184ms (Views: 36.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:24:45 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"hngf", "email"=>"h gf", "body"=>" h"}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  describe `comments`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (5, 'hngf', 'h gf', ' h', '2011-12-22 05:24:45', '2011-12-22 05:24:45')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Rendered comments/_comment.html.erb (25.7ms)
+Rendered comments/create.js.erb (27.7ms)
+Completed 200 OK in 130ms (Views: 34.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2011-12-22 09:25:16 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+Rendered articles/_article.html.erb (24.7ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 5)[0m
+Rendered comments/_comment.html.erb (10.1ms)
+Rendered articles/show.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 124ms (Views: 63.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/5/comments/new.js" for 127.0.0.1 at 2011-12-22 09:25:18 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+Rendered comments/new.html.erb (50.4ms)
+Rendered comments/new.js.erb (52.6ms)
+Completed 200 OK in 119ms (Views: 60.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:25:22 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"tedfv", "email"=>"rhtbdf", "body"=>"yrgbd"}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  describe `comments`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `comments` (`article_id`, `name`, `email`, `body`, `created_at`, `updated_at`) VALUES (5, 'tedfv', 'rhtbdf', 'yrgbd', '2011-12-22 05:25:22', '2011-12-22 05:25:22')[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Rendered comments/_comment.html.erb (66.9ms)
+Rendered comments/create.js.erb (68.7ms)
+Completed 200 OK in 136ms (Views: 75.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2011-12-22 09:25:27 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+Rendered articles/_article.html.erb (68.1ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 5)[0m
+Rendered comments/_comment.html.erb (10.2ms)
+Rendered articles/show.html.erb within layouts/application (105.3ms)
+Completed 200 OK in 130ms (Views: 108.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/articles/5/comments/new.js" for 127.0.0.1 at 2011-12-22 09:25:51 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+Rendered comments/new.html.erb (77.4ms)
+Rendered comments/new.js.erb (79.2ms)
+Completed 200 OK in 107ms (Views: 85.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:25:53 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Rendered comments/fail_create.js.erb (3.5ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `to_sentes' for #<Array:0x000000049aaf20>):
+    1: alert("<%= @comment.errors.full_messages.to_sentes%>");
+  app/views/comments/fail_create.js.erb:1:in `_app_views_comments_fail_create_js_erb__367843116958311167_38649260__694857989309024681'
+  app/controllers/comments_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/comments_controller.rb:12:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.1ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.0ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:25:56 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"myutng", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered comments/fail_create.js.erb (2.4ms)
+Completed 500 Internal Server Error in 62ms
+
+ActionView::Template::Error (undefined method `to_sentes' for ["Email can't be blank", "Body can't be blank"]:Array):
+    1: alert("<%= @comment.errors.full_messages.to_sentes%>");
+  app/views/comments/fail_create.js.erb:1:in `_app_views_comments_fail_create_js_erb__367843116958311167_39018380__694857989309024681'
+  app/controllers/comments_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/comments_controller.rb:12:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:25:58 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"myutng", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Rendered comments/fail_create.js.erb (2.4ms)
+Completed 500 Internal Server Error in 62ms
+
+ActionView::Template::Error (undefined method `to_sentes' for ["Email can't be blank", "Body can't be blank"]:Array):
+    1: alert("<%= @comment.errors.full_messages.to_sentes%>");
+  app/views/comments/fail_create.js.erb:1:in `_app_views_comments_fail_create_js_erb__367843116958311167_39361880__694857989309024681'
+  app/controllers/comments_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/comments_controller.rb:12:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.7ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:25:59 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"myutng", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered comments/fail_create.js.erb (2.3ms)
+Completed 500 Internal Server Error in 62ms
+
+ActionView::Template::Error (undefined method `to_sentes' for ["Email can't be blank", "Body can't be blank"]:Array):
+    1: alert("<%= @comment.errors.full_messages.to_sentes%>");
+  app/views/comments/fail_create.js.erb:1:in `_app_views_comments_fail_create_js_erb__367843116958311167_39741060__694857989309024681'
+  app/controllers/comments_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/comments_controller.rb:12:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.3ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:25:59 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"myutng", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+Rendered comments/fail_create.js.erb (2.4ms)
+Completed 500 Internal Server Error in 103ms
+
+ActionView::Template::Error (undefined method `to_sentes' for ["Email can't be blank", "Body can't be blank"]:Array):
+    1: alert("<%= @comment.errors.full_messages.to_sentes%>");
+  app/views/comments/fail_create.js.erb:1:in `_app_views_comments_fail_create_js_erb__367843116958311167_40006660__694857989309024681'
+  app/controllers/comments_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/comments_controller.rb:12:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.6ms)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2011-12-22 09:26:21 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+Rendered articles/_article.html.erb (25.5ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 5)[0m
+Rendered comments/_comment.html.erb (10.4ms)
+Rendered articles/show.html.erb within layouts/application (59.5ms)
+Completed 200 OK in 123ms (Views: 62.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/articles/5/comments/new.js" for 127.0.0.1 at 2011-12-22 09:26:24 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+Rendered comments/new.html.erb (33.7ms)
+Rendered comments/new.js.erb (35.6ms)
+Completed 200 OK in 109ms (Views: 43.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:26:26 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"v ", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+Rendered comments/fail_create.js.erb (2.5ms)
+Completed 500 Internal Server Error in 108ms
+
+ActionView::Template::Error (undefined method `to_sentces' for ["Email can't be blank", "Body can't be blank"]:Array):
+    1: alert("<%= @comment.errors.full_messages.to_sentces%>");
+  app/views/comments/fail_create.js.erb:1:in `_app_views_comments_fail_create_js_erb__367843116958311167_70120510370860__694857989309024681'
+  app/controllers/comments_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/comments_controller.rb:12:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:26:27 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"v ", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered comments/fail_create.js.erb (2.9ms)
+Completed 500 Internal Server Error in 102ms
+
+ActionView::Template::Error (undefined method `to_sentces' for ["Email can't be blank", "Body can't be blank"]:Array):
+    1: alert("<%= @comment.errors.full_messages.to_sentces%>");
+  app/views/comments/fail_create.js.erb:1:in `_app_views_comments_fail_create_js_erb__367843116958311167_30104400__694857989309024681'
+  app/controllers/comments_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/comments_controller.rb:12:in `create'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.3ms)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2011-12-22 09:26:48 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+Rendered articles/_article.html.erb (75.1ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 5)
+Rendered comments/_comment.html.erb (10.4ms)
+Rendered articles/show.html.erb within layouts/application (120.9ms)
+Completed 200 OK in 151ms (Views: 126.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/5/comments/new.js" for 127.0.0.1 at 2011-12-22 09:26:50 +0400
+  Processing by CommentsController#new as JS
+  Parameters: {"article_id"=>"5"}
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+Rendered comments/new.html.erb (30.1ms)
+Rendered comments/new.js.erb (32.0ms)
+Completed 200 OK in 60ms (Views: 38.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:26:52 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"df", "email"=>"", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered comments/fail_create.js.erb (2.4ms)
+Completed 200 OK in 62ms (Views: 9.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:26:58 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"df", "email"=>"d", "body"=>""}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Rendered comments/fail_create.js.erb (1.7ms)
+Completed 200 OK in 105ms (Views: 8.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:27:03 +0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAvEsNv5j76BGjAXP+Sjo0JOtMHVgi9KtBP0yIChSSE=", "comment"=>{"name"=>"df", "email"=>"", "body"=>"yf"}, "commit"=>"Add", "article_id"=>"5"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered comments/fail_create.js.erb (1.6ms)
+Completed 200 OK in 102ms (Views: 8.5ms | ActiveRecord: 2.3ms)
