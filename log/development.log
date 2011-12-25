@@ -9890,3 +9890,1682 @@ Started POST "/articles/5/comments" for 127.0.0.1 at 2011-12-22 09:27:03 +0400
   [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
 Rendered comments/fail_create.js.erb (1.6ms)
 Completed 200 OK in 102ms (Views: 8.5ms | ActiveRecord: 2.3ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2011-12-22 14:01:37 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mArticle Load (18.8ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 5 LIMIT 1[0m
+Rendered articles/_article.html.erb (234.8ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 5)
+Rendered comments/_comment.html.erb (2.1ms)
+Rendered articles/show.html.erb within layouts/application (347.6ms)
+Completed 200 OK in 586ms (Views: 373.2ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2011-12-22 14:01:40 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles`
+Rendered articles/_article.html.erb (60.5ms)
+Rendered articles/index.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 118ms (Views: 91.8ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 14:01:49 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (25.7ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (11.4ms)
+Rendered articles/show.html.erb within layouts/application (63.2ms)
+Completed 200 OK in 90ms (Views: 66.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 14:37:42 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (24.2ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (11.4ms)
+Rendered articles/show.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 83ms (Views: 62.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 14:37:49 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (25.6ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (11.4ms)
+Rendered articles/show.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 85ms (Views: 63.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-22 14:37:52 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+Rendered articles/_article.html.erb (42.3ms)
+Rendered articles/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 70ms (Views: 50.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-22 14:37:59 +0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-12-22 14:38:06 +0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m/TWCRw4MxHQujJH2rP/UWcjGmrQeajBFsFAK25B0ZA=", "email"=>"formal7@yandex.ru", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'formal7@yandex.ru' LIMIT 1
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 30ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-22 14:38:06 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.6ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (70.4ms)
+Rendered articles/index.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 98ms (Views: 78.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 14:38:08 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (40.3ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (63.1ms)
+Rendered articles/show.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 156ms (Views: 130.4ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/articles/1/comments/2" for 127.0.0.1 at 2011-12-22 14:38:12 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"2"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 2 AND (`comments`.article_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 2
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 500 Internal Server Error in 58ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/comments_controller.rb:23:in `block in destroy'
+  app/controllers/comments_controller.rb:22:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.3ms)
+
+
+Started DELETE "/articles/1/comments/2" for 127.0.0.1 at 2011-12-22 14:38:16 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"2"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 2 AND (`comments`.article_id = 1) LIMIT 1
+Completed 404 Not Found in 41ms
+
+ActiveRecord::RecordNotFound (Couldn't find Comment with ID=2 [WHERE (`comments`.article_id = 1)]):
+  app/controllers/comments_controller.rb:20:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started DELETE "/articles/1/comments/2" for 127.0.0.1 at 2011-12-22 14:38:19 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"2"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 2 AND (`comments`.article_id = 1) LIMIT 1[0m
+Completed 404 Not Found in 90ms
+
+ActiveRecord::RecordNotFound (Couldn't find Comment with ID=2 [WHERE (`comments`.article_id = 1)]):
+  app/controllers/comments_controller.rb:20:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started DELETE "/articles/1/comments/16" for 127.0.0.1 at 2011-12-22 14:38:35 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"16"}
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 16 AND (`comments`.article_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 16
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 500 Internal Server Error in 49ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/comments_controller.rb:23:in `block in destroy'
+  app/controllers/comments_controller.rb:22:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (51.4ms)
+
+
+Started DELETE "/articles/1/comments/17" for 127.0.0.1 at 2011-12-22 14:38:38 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"17"}
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 17 AND (`comments`.article_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 17
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 500 Internal Server Error in 49ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/comments_controller.rb:23:in `block in destroy'
+  app/controllers/comments_controller.rb:22:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.2ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 14:39:42 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (40.4ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (23.9ms)
+Rendered articles/show.html.erb within layouts/application (87.8ms)
+Completed 200 OK in 112ms (Views: 90.9ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/articles/1/comments/21" for 127.0.0.1 at 2011-12-22 14:39:44 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"21"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 21 AND (`comments`.article_id = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM `comments` WHERE `comments`.`id` = 21[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Completed 500 Internal Server Error in 81ms
+
+ActionView::MissingTemplate (Missing template comments/destroy with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:22:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 14:40:18 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (40.7ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (20.0ms)
+Rendered articles/show.html.erb within layouts/application (84.7ms)
+Completed 200 OK in 149ms (Views: 87.7ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/articles/1/comments/20" for 127.0.0.1 at 2011-12-22 14:40:22 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"20"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 20 AND (`comments`.article_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 20
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 67ms
+
+ActionView::MissingTemplate (Missing template comments/destroy with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:22:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started DELETE "/articles/1/comments/19" for 127.0.0.1 at 2011-12-22 14:40:29 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"19"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 19 AND (`comments`.article_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 19
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 94ms
+
+ActionView::MissingTemplate (Missing template comments/destroy with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:js, :html], :locale=>[:en, :en]} in view paths "/home/ilia/chapter07/app/views"):
+  app/controllers/comments_controller.rb:22:in `destroy'
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-22 14:42:16 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.8ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (88.4ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (18.2ms)
+Rendered articles/show.html.erb within layouts/application (130.5ms)
+Completed 200 OK in 156ms (Views: 133.7ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/articles/1/comments/18" for 127.0.0.1 at 2011-12-22 14:42:21 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"18"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (2.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 18 AND (`comments`.article_id = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM `comments` WHERE `comments`.`id` = 18[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Rendered comments/destroy.js.erb (0.8ms)
+Completed 200 OK in 100ms (Views: 7.8ms | ActiveRecord: 4.9ms)
+
+
+Started DELETE "/articles/1/comments/14" for 127.0.0.1 at 2011-12-22 14:42:23 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"14"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 14 AND (`comments`.article_id = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM `comments` WHERE `comments`.`id` = 14[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Rendered comments/destroy.js.erb (0.8ms)
+Completed 200 OK in 58ms (Views: 8.4ms | ActiveRecord: 2.6ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/ilia/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-25 14:38:24 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (32.6ms)[0m  SELECT `articles`.* FROM `articles`
+Rendered articles/_article.html.erb (390.1ms)
+Rendered articles/index.html.erb within layouts/application (643.8ms)
+Completed 200 OK in 1003ms (Views: 713.7ms | ActiveRecord: 34.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-25 14:38:30 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered articles/_article.html.erb (24.5ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered articles/show.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 102ms (Views: 81.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-25 14:38:33 +0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 106ms (Views: 105.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-12-25 14:38:40 +0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pGAn9lgSe5MnmiP1Xf43oBC5gFkaBNFpLw8GpriRtSY=", "email"=>"formal7@yandex.ru", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'formal7@yandex.ru' LIMIT 1
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 30ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-25 14:38:40 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (70.8ms)
+Rendered articles/index.html.erb within layouts/application (118.7ms)
+Completed 200 OK in 147ms (Views: 122.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-25 14:38:41 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (81.3ms)
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (18.1ms)
+Rendered articles/show.html.erb within layouts/application (123.5ms)
+Completed 200 OK in 148ms (Views: 126.6ms | ActiveRecord: 3.5ms)
+
+
+Started DELETE "/articles/1/comments/3" for 127.0.0.1 at 2011-12-25 14:38:45 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"3"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 3 AND (`comments`.article_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 3
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Rendered comments/destroy.js.erb (0.8ms)
+Completed 200 OK in 104ms (Views: 49.4ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/articles/1/comments/11" for 127.0.0.1 at 2011-12-25 14:38:50 +0400
+  Processing by CommentsController#destroy as JS
+  Parameters: {"article_id"=>"1", "id"=>"11"}
+  [1m[35mSQL (1.1ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 11 AND (`comments`.article_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (79.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 11
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Rendered comments/destroy.js.erb (0.9ms)
+Completed 200 OK in 150ms (Views: 10.8ms | ActiveRecord: 82.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ilia/chapter07/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ilia/chapter07/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ilia/chapter07/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ilia/chapter07/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/ilia/chapter07/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/ilia/chapter07/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-26 00:16:51 +0400
+
+SyntaxError (/home/ilia/chapter07/app/controllers/articles_controller.rb:88: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.9ms)
+Rendered /home/ilia/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-26 00:17:15 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (15.6ms)[0m  SELECT `articles`.* FROM `articles`
+Rendered articles/_article.html.erb (208.5ms)
+Rendered articles/index.html.erb within layouts/application (273.4ms)
+Completed 200 OK in 551ms (Views: 301.2ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-26 00:17:18 +0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 100ms (Views: 99.0ms | ActiveRecord: 19.8ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-12-26 00:17:23 +0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsqjSHtFALwt/LySrGkyuiUA3cCwFXfbIbG40BH1x0=", "email"=>"formal7@yandex.ru", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'formal7@yandex.ru' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 31ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-26 00:17:23 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (71.2ms)
+Rendered articles/index.html.erb within layouts/application (76.2ms)
+Completed 200 OK in 146ms (Views: 79.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:17:25 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (42.4ms)
+Rendered articles/_notify_friend.html.erb (1.7ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (10.9ms)
+Rendered articles/show.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 127ms (Views: 105.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:19:14 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (41.9ms)
+Rendered articles/_notify_friend.html.erb (1.7ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (14.4ms)
+Rendered articles/show.html.erb within layouts/application (83.2ms)
+Completed 200 OK in 108ms (Views: 86.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-26 00:19:16 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (118.0ms)
+Rendered articles/index.html.erb within layouts/application (123.6ms)
+Completed 200 OK in 147ms (Views: 127.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/6" for 127.0.0.1 at 2011-12-26 00:19:18 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 6 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (40.5ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[35mComment Load (1.0ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 6)
+Rendered collection (0.0ms)
+Rendered articles/show.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 145ms (Views: 122.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/articles/6" for 127.0.0.1 at 2011-12-26 00:20:18 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 6 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (41.7ms)
+Rendered articles/_notify_friend.html.erb (1.9ms)
+  [1m[36mComment Load (1.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 6)[0m
+Rendered collection (0.0ms)
+Rendered articles/show.html.erb within layouts/application (114.3ms)
+Completed 200 OK in 139ms (Views: 116.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-26 00:20:28 +0400
+  Processing by ArticlesController#index as HTML
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (126.4ms)
+Rendered articles/index.html.erb within layouts/application (132.1ms)
+Completed 200 OK in 155ms (Views: 135.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:20:29 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.8ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (88.5ms)
+Rendered articles/_notify_friend.html.erb (2.3ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (15.5ms)
+Rendered articles/show.html.erb within layouts/application (131.9ms)
+Completed 200 OK in 157ms (Views: 134.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:21:26 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (102.0ms)
+Rendered articles/_notify_friend.html.erb (2.1ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (14.8ms)
+Rendered articles/show.html.erb within layouts/application (154.1ms)
+Completed 200 OK in 188ms (Views: 160.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/articles/1/notify_friend" for 127.0.0.1 at 2011-12-26 00:42:42 +0400
+  Processing by ArticlesController#notify_friend as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsqjSHtFALwt/LySrGkyuiUA3cCwFXfbIbG40BH1x0=", "name"=>"cloud", "email"=>"formal7@yandex.ru", "commit"=>"Send", "id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered notifier/email_friend.text.erb (0.6ms)
+
+Sent mail to formal7@yandex.ru (3345ms)
+Date: Mon, 26 Dec 2011 00:42:43 +0400
+From: from@example.com
+To: formal7@yandex.ru
+Message-ID: <4ef78ac341f57_14f3161af5c66594@ilia-UL30JT.mail>
+Subject: Interesting article
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notifier#email_friend
+
+, find me in app/views/app/views/notifier/email_friend.text.erb
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 3633ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:42:46 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (1.3ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (42.8ms)
+Rendered articles/_notify_friend.html.erb (1.9ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (14.5ms)
+Rendered articles/show.html.erb within layouts/application (84.7ms)
+Completed 200 OK in 158ms (Views: 87.9ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/articles/1/notify_friend" for 127.0.0.1 at 2011-12-26 00:43:59 +0400
+  Processing by ArticlesController#notify_friend as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsqjSHtFALwt/LySrGkyuiUA3cCwFXfbIbG40BH1x0=", "name"=>"cloud", "email"=>"formal7@yandex.ru", "commit"=>"Send", "id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered notifier/email_friend.text.erb (11.5ms)
+
+Sent mail to formal7@yandex.ru (2582ms)
+Date: Mon, 26 Dec 2011 00:43:59 +0400
+From: from@example.com
+To: formal7@yandex.ru
+Message-ID: <4ef78b0f2daac_14f3efa68c666bf@ilia-UL30JT.mail>
+Subject: Interesting article
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Your friend cloud thinks you may like the following article:
+sdsdsd: http://localhost:3000/articles/1
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 2639ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:44:01 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (41.5ms)
+Rendered articles/_notify_friend.html.erb (2.2ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (14.5ms)
+Rendered articles/show.html.erb within layouts/application (83.9ms)
+Completed 200 OK in 158ms (Views: 87.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:44:50 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered articles/_article.html.erb (33.2ms)
+Rendered articles/_notify_friend.html.erb (3.6ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (10.9ms)
+Rendered articles/show.html.erb within layouts/application (74.8ms)
+Completed 200 OK in 101ms (Views: 77.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:47:34 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (44.0ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (64.4ms)
+Rendered articles/show.html.erb within layouts/application (139.6ms)
+Completed 200 OK in 165ms (Views: 142.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:47:34 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (42.8ms)
+Rendered articles/_notify_friend.html.erb (47.4ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (15.2ms)
+Rendered articles/show.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 169ms (Views: 146.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:47:34 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (88.3ms)
+Rendered articles/_notify_friend.html.erb (1.9ms)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (14.5ms)
+Rendered articles/show.html.erb within layouts/application (139.0ms)
+Completed 200 OK in 169ms (Views: 145.1ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/articles/1/notify_friend" for 127.0.0.1 at 2011-12-26 00:47:39 +0400
+  Processing by ArticlesController#notify_friend as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsqjSHtFALwt/LySrGkyuiUA3cCwFXfbIbG40BH1x0=", "name"=>"Илья", "email"=>"formal7@yandex.ru", "commit"=>"Send", "id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered notifier/email_friend.html.erb (11.1ms)
+Rendered notifier/email_friend.text.erb (0.8ms)
+
+Sent mail to formal7@yandex.ru (2367ms)
+Date: Mon, 26 Dec 2011 00:47:40 +0400
+From: from@example.com
+To: formal7@yandex.ru
+Message-ID: <4ef78bec9d63_14f3bf47e46709b@ilia-UL30JT.mail>
+Subject: Interesting article
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4ef78bebf2f4a_14f3bf47e4667c1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4ef78bebf2f4a_14f3bf47e4667c1
+Date: Mon, 26 Dec 2011 00:47:40 +0400
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4ef78bec7d2b_14f3bf47e46685@ilia-UL30JT.mail>
+
+Your friend =D0=98=D0=BB=D1=8C=D1=8F thinks you may like the following ar=
+ticle:
+sdsdsd: http://localhost:3000/articles/1
+
+
+----==_mimepart_4ef78bebf2f4a_14f3bf47e4667c1
+Date: Mon, 26 Dec 2011 00:47:40 +0400
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4ef78bec90f9_14f3bf47e4669c@ilia-UL30JT.mail>
+
+<html>
+<body>
+<p>
+  One of your friends, =D0=98=D0=BB=D1=8C=D1=8F,
+  thinks you like an article we have written.
+</p>
+
+<p>
+  Come check all the information about <strong>sdsdsd</strong> at
+  http://localhost:3000/articles/1
+</p>
+</body>
+</html>=
+
+
+----==_mimepart_4ef78bebf2f4a_14f3bf47e4667c1--
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 2493ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:47:42 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (90.1ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (14.2ms)
+Rendered articles/show.html.erb within layouts/application (132.5ms)
+Completed 200 OK in 158ms (Views: 135.5ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/articles/1/notify_friend" for 127.0.0.1 at 2011-12-26 00:52:49 +0400
+  Processing by ArticlesController#notify_friend as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsqjSHtFALwt/LySrGkyuiUA3cCwFXfbIbG40BH1x0=", "name"=>"Илья", "email"=>"formal7@yandex.ru", "commit"=>"Send", "id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered notifier/email_friend.html.erb (13.1ms)
+Rendered notifier/email_friend.text.erb (0.9ms)
+
+Sent mail to formal7@yandex.ru (3286ms)
+Date: Mon, 26 Dec 2011 00:52:50 +0400
+From: from@example.com
+To: formal7@yandex.ru
+Message-ID: <4ef78d2272e0_14f31660ee467785@ilia-UL30JT.mail>
+Subject: Interesting article
+Mime-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="--==_mimepart_4ef78d21f3c36_14f31660ee4673ec";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4ef78d21f3c36_14f31660ee4673ec
+Date: Mon, 26 Dec 2011 00:52:50 +0400
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4ef78d21f3152_14f31660ee4672ea";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4ef78d225969_14f31660ee467645@ilia-UL30JT.mail>
+
+
+
+----==_mimepart_4ef78d21f3152_14f31660ee4672ea
+Date: Mon, 26 Dec 2011 00:52:50 +0400
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4ef78d223902_14f31660ee4674d7@ilia-UL30JT.mail>
+
+Your friend =D0=98=D0=BB=D1=8C=D1=8F thinks you may like the following ar=
+ticle:
+sdsdsd: http://localhost:3000/articles/1
+
+
+----==_mimepart_4ef78d21f3152_14f31660ee4672ea
+Date: Mon, 26 Dec 2011 00:52:50 +0400
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4ef78d224afc_14f31660ee4675b0@ilia-UL30JT.mail>
+
+<html>
+<body>
+<p>
+  One of your friends, =D0=98=D0=BB=D1=8C=D1=8F,
+  thinks you like an article we have written.
+</p>
+
+<p>
+  Come check all the information about <strong>sdsdsd</strong> at
+  http://localhost:3000/articles/1
+</p>
+</body>
+</html>=
+
+
+----==_mimepart_4ef78d21f3152_14f31660ee4672ea--
+
+
+----==_mimepart_4ef78d21f3c36_14f31660ee4673ec
+Date: Mon, 26 Dec 2011 00:52:50 +0400
+Mime-Version: 1.0
+Content-Type: image/png;
+ charset=UTF-8;
+ filename=rails.png
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename=rails.png
+Content-ID: <4ef78d21eb391_14f31660ee4671e0@ilia-UL30JT.mail>
+
+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
+
+
+----==_mimepart_4ef78d21f3c36_14f31660ee4673ec--
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 3478ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:52:53 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (41.4ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (14.4ms)
+Rendered articles/show.html.erb within layouts/application (82.4ms)
+Completed 200 OK in 160ms (Views: 85.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:52:59 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.8ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (41.1ms)
+Rendered articles/_notify_friend.html.erb (1.7ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (32.1ms)
+Rendered articles/show.html.erb within layouts/application (145.6ms)
+Completed 200 OK in 170ms (Views: 148.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:53:41 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (49.0ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[36mComment Load (1.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (22.5ms)
+Rendered articles/show.html.erb within layouts/application (152.8ms)
+Completed 200 OK in 179ms (Views: 155.4ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/articles/1/notify_friend" for 127.0.0.1 at 2011-12-26 00:53:47 +0400
+  Processing by ArticlesController#notify_friend as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsqjSHtFALwt/LySrGkyuiUA3cCwFXfbIbG40BH1x0=", "name"=>"cloud", "email"=>"formal7@yandex.ru", "commit"=>"Send", "id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+Rendered notifier/email_friend.html.erb (11.3ms)
+Rendered notifier/email_friend.text.erb (0.9ms)
+
+Sent mail to formal7@yandex.ru (2854ms)
+Date: Mon, 26 Dec 2011 00:53:47 +0400
+From: from@example.com
+To: formal7@yandex.ru
+Message-ID: <4ef78d5b6edd8_14f33fded82f454468459@ilia-UL30JT.mail>
+Subject: Interesting article
+Mime-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="--==_mimepart_4ef78d5b5c6dd_14f33fded82f4544680bf";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4ef78d5b5c6dd_14f33fded82f4544680bf
+Date: Mon, 26 Dec 2011 00:53:47 +0400
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4ef78d5b5bc52_14f33fded82f45446796f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4ef78d5b6d3da_14f33fded82f454468331@ilia-UL30JT.mail>
+
+
+
+----==_mimepart_4ef78d5b5bc52_14f33fded82f45446796f
+Date: Mon, 26 Dec 2011 00:53:47 +0400
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4ef78d5b6b79b_14f33fded82f4544681e8@ilia-UL30JT.mail>
+
+Your friend cloud thinks you may like the following article:
+sdsdsd: http://localhost:3000/articles/1
+
+
+----==_mimepart_4ef78d5b5bc52_14f33fded82f45446796f
+Date: Mon, 26 Dec 2011 00:53:47 +0400
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4ef78d5b6c860_14f33fded82f454468272@ilia-UL30JT.mail>
+
+<html>
+<body>
+<p>
+  One of your friends, cloud,
+  thinks you like an article we have written.
+</p>
+
+<p>
+  Come check all the information about <strong>sdsdsd</strong> at
+  http://localhost:3000/articles/1
+</p>
+</body>
+</html>
+
+----==_mimepart_4ef78d5b5bc52_14f33fded82f45446796f--
+
+
+----==_mimepart_4ef78d5b5c6dd_14f33fded82f4544680bf
+Date: Mon, 26 Dec 2011 00:53:47 +0400
+Mime-Version: 1.0
+Content-Type: image/png;
+ charset=UTF-8;
+ filename=rails.png
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename=rails.png
+Content-ID: <4ef78d5b54b50_14f33fded82f454467871@ilia-UL30JT.mail>
+
+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
+
+
+----==_mimepart_4ef78d5b5c6dd_14f33fded82f4544680bf--
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 2984ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:53:50 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (94.0ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (14.4ms)
+Rendered articles/show.html.erb within layouts/application (135.5ms)
+Completed 200 OK in 160ms (Views: 138.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:54:17 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (42.2ms)
+Rendered articles/_notify_friend.html.erb (2.0ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (22.9ms)
+Rendered articles/show.html.erb within layouts/application (141.7ms)
+Completed 200 OK in 167ms (Views: 144.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:54:17 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (41.6ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (17.3ms)
+Rendered articles/show.html.erb within layouts/application (87.1ms)
+Completed 200 OK in 157ms (Views: 90.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:54:17 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (42.0ms)
+Rendered articles/_notify_friend.html.erb (2.4ms)
+  [1m[36mComment Load (6.9ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (15.7ms)
+Rendered articles/show.html.erb within layouts/application (92.7ms)
+Completed 200 OK in 118ms (Views: 89.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:54:18 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  describe `articles_categories`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered articles/_article.html.erb (41.1ms)
+Rendered articles/_notify_friend.html.erb (1.8ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)
+Rendered comments/_comment.html.erb (23.5ms)
+Rendered articles/show.html.erb within layouts/application (92.5ms)
+Completed 200 OK in 117ms (Views: 95.6ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/articles/1/notify_friend" for 127.0.0.1 at 2011-12-26 00:54:23 +0400
+  Processing by ArticlesController#notify_friend as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsqjSHtFALwt/LySrGkyuiUA3cCwFXfbIbG40BH1x0=", "name"=>"Гость", "email"=>"formal7@yandex.ru", "commit"=>"Send", "id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+Rendered notifier/email_friend.html.erb (11.6ms)
+Rendered notifier/email_friend.text.erb (0.8ms)
+
+Sent mail to formal7@yandex.ru (2668ms)
+Date: Mon, 26 Dec 2011 00:54:23 +0400
+From: from@example.com
+To: formal7@yandex.ru
+Message-ID: <4ef78d7f24a89_14f317991f86918d@ilia-UL30JT.mail>
+Subject: Interesting article
+Mime-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="--==_mimepart_4ef78d7f1dd7c_14f317991f868779";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4ef78d7f1dd7c_14f317991f868779
+Date: Mon, 26 Dec 2011 00:54:23 +0400
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4ef78d7f1d2a9_14f317991f86864e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4ef78d7f23271_14f317991f869075@ilia-UL30JT.mail>
+
+
+
+----==_mimepart_4ef78d7f1d2a9_14f317991f86864e
+Date: Mon, 26 Dec 2011 00:54:23 +0400
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4ef78d7f21503_14f317991f868891@ilia-UL30JT.mail>
+
+Your friend =D0=93=D0=BE=D1=81=D1=82=D1=8C thinks you may like the follow=
+ing article:
+sdsdsd: http://localhost:3000/articles/1
+
+
+----==_mimepart_4ef78d7f1d2a9_14f317991f86864e
+Date: Mon, 26 Dec 2011 00:54:23 +0400
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <4ef78d7f226f9_14f317991f86894d@ilia-UL30JT.mail>
+
+<html>
+<body>
+<p>
+  One of your friends, =D0=93=D0=BE=D1=81=D1=82=D1=8C,
+  thinks you like an article we have written.
+</p>
+
+<p>
+  Come check all the information about <strong>sdsdsd</strong> at
+  http://localhost:3000/articles/1
+</p>
+</body>
+</html>=
+
+
+----==_mimepart_4ef78d7f1d2a9_14f317991f86864e--
+
+
+----==_mimepart_4ef78d7f1dd7c_14f317991f868779
+Date: Mon, 26 Dec 2011 00:54:23 +0400
+Mime-Version: 1.0
+Content-Type: image/png;
+ charset=UTF-8;
+ filename=rails.png
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename=rails.png
+Content-ID: <4ef78d7f15f1a_14f317991f868595@ilia-UL30JT.mail>
+
+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
+
+
+----==_mimepart_4ef78d7f1dd7c_14f317991f868779--
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 2759ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2011-12-26 00:54:25 +0400
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `articles_categories`[0m
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered articles/_article.html.erb (90.0ms)
+Rendered articles/_notify_friend.html.erb (1.9ms)
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.article_id = 1)[0m
+Rendered comments/_comment.html.erb (14.7ms)
+Rendered articles/show.html.erb within layouts/application (132.3ms)
+Completed 200 OK in 158ms (Views: 135.3ms | ActiveRecord: 6.1ms)

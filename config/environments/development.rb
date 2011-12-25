@@ -16,4 +16,16 @@ Blog::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :enable_starttls_auto => true,
+    :port => 587,
+    :authentication => :plain,
+    :user_name => "formal777@gmail.com",
+    :password => 'Luxis0789'
+  }
+
+  config.active_support.deprecation = :log
+
+
 end
