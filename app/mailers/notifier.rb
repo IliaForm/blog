@@ -14,4 +14,9 @@ class Notifier < ActionMailer::Base
 
     mail :to => receiver_email, :subject => 'Interesting article'
   end
+
+  def comment_added(comment)
+    @article = comment.article
+    mail :to => @article.user.email, :subject => "New comment for '#{@article.title}'"
+  end
 end
